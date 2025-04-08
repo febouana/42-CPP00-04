@@ -1,9 +1,4 @@
-#include "PhoneBook.class.hpp"
-#include <iostream>
-#include <string>
-
-// NE DOIT PAS PERMETTRE DES INFOS VIDES DANS ADD
-// TRONQUER LES NOMS SI DEPASSENT 10CHARS
+#include "../includes/PhoneBook.class.hpp"
 
 // Quand contact == 8/8 on reecrit systematiquement sur le premier ou on defile encore ?
 

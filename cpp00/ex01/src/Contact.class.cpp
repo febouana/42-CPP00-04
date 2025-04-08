@@ -1,4 +1,4 @@
-#include "Contact.class.hpp"
+#include "../includes/Contact.class.hpp"
 
 Contact::Contact()
 {
