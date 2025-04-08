@@ -8,7 +8,7 @@ FragTrap::FragTrap() : ClapTrap()
     set_HitPoint(100);
     set_EnergyPoint(100);
     set_AttackDamage(30);
-    std::cout << "The FragTrap "<< get_Name() <<" is born! 🐣" << std::endl;
+    std::cout << "The DefaultFragTrap " << get_Name() <<" is born! 🐣" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name) 
@@ -17,7 +17,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
     set_HitPoint(100);
     set_EnergyPoint(100);
     set_AttackDamage(30);
-    std::cout << "a FragTrap is born! 🐣" << std::endl;
+    std::cout << "The FragTrap " << get_Name() <<" is born! 🐣" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap &src) : ClapTrap(src) 

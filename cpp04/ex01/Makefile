@@ -12,6 +12,7 @@ SRC =	src/main.cpp \
 		src/Dog.class.cpp \
 		src/WrongAnimal.class.cpp \
 		src/WrongCat.class.cpp \
+		src/Brain.class.cpp \
 
 Polymorphism:	
 				${CPP} ${SRC} ${CPPFLAGS} -o ${NAME}

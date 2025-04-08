@@ -7,11 +7,12 @@ RM = 			rm -f
 NAME = 			Polymorphism
 
 SRC =	src/main.cpp \
-		src/Animal.class.cpp \
+		src/AAnimal.class.cpp \
 		src/Cat.class.cpp \
 		src/Dog.class.cpp \
 		src/WrongAnimal.class.cpp \
 		src/WrongCat.class.cpp \
+		src/Brain.class.cpp \
 
 Polymorphism:	
 				${CPP} ${SRC} ${CPPFLAGS} -o ${NAME}

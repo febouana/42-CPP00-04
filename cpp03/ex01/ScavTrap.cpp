@@ -9,7 +9,7 @@ ScavTrap::ScavTrap() : ClapTrap()
     set_EnergyPoint(50);
     set_AttackDamage(20);
     this->_GuardGate = false;
-    std::cout << "The ScavTrap "<< get_Name() <<" is born! 🐣" << std::endl;
+    std::cout << "The DefaultScavTrap " << get_Name() <<" is born! 🐣" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) 
@@ -19,7 +19,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
     set_EnergyPoint(50);
     set_AttackDamage(20);
     this->_GuardGate = false;
-    std::cout << "ScavTrap enters the arena! 🐣" << std::endl;
+    std::cout << "The ScavTrap " << get_Name() << " is born! 🐣" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap(src) 
