@@ -1,5 +1,6 @@
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#ifndef ZOMBIE_CLASS_HPP
+#define ZOMBIE_CLASS_HPP
+
 #include <iostream>
 #include <string>
 

@@ -1,26 +1,43 @@
+NAME        = UnnecessaryViolence
 
-CPP = 			c++
+CPP         = c++
+CPPFLAGS    = -Wall -Wextra -Werror -std=c++98
+RM          = rm -f
 
-CPPFLAGS = 		-Wall -Wextra -Werror -std=c++98
+SRC =	src/main.cpp \
+		src/Weapon.class.cpp \
+		src/HumanA.class.cpp \
+		src/HumanB.class.cpp \
 
-RM = 			rm -f
+CYAN		= \033[36m
+RESET		= \033[0m
+UP			= \033[A #remonte le curseur d'une ligne dans le terminal
+CUT			= \033[K #efface la ligne courante
 
-NAME =          unnecessaryViolence
+all: $(NAME)
+	@printf "\n\
+$(CYAN)  ██████╗██████╗ ██████╗  ██████╗  ██╗       ██████╗ ██████╗  \n\
+$(CYAN) ██╔════╝██╔══██╗██╔══██╗██╔═████╗███║      ██╔═████╗╚════██╗\n\
+$(CYAN) ██║     ██████╔╝██████╔╝██║██╔██║╚██║█████╗██║██╔██║ █████╔╝\n\
+$(CYAN) ██║     ██╔═══╝ ██╔═══╝ ████╔╝██║ ██║╚════╝████╔╝██║ ╚═══██╗\n\
+$(CYAN) ╚██████╗██║     ██║     ╚██████╔╝ ██║      ╚██████╔╝██████╔╝\n\
+$(CYAN)  ╚═════╝╚═╝     ╚═╝      ╚═════╝  ╚═╝       ╚═════╝ ╚═════╝  $(RESET)\n"
 
-SRC =	main.cpp \
-		Weapon.cpp \
-		HumanA.cpp \
-		HumanB.cpp
-
-unnecessaryViolence:	
-				${CPP} ${SRC} ${CPPFLAGS} -o ${NAME}
-
-all : 			$(NAME)                                                    
-
-re : 		fclean unnecessaryViolence	
+$(NAME):
+	@printf "$(CYAN)Compiling [$(NAME)]$(RESET)"
+	@sleep 0.2 && printf "$(CYAN).$(RESET)" && sleep 0.2 && printf "$(CYAN).$(RESET)" && sleep 0.2 && printf "$(CYAN).$(RESET)\n"
+	@$(CPP) $(CPPFLAGS) $(SRC) -o $(NAME)
+	@printf "$(UP)$(CUT)"
+	@printf "$(CYAN)Finished [$(NAME)]$(RESET)\n"
+	@printf "$(UP)$(CUT)"
 
 clean:
-			$(RM) unnecessaryViolence
+	@$(RM) $(NAME)
+	@printf "$(CYAN)Cleanup done.$(RESET)\n"
 
-fclean: 	clean
-				@$(RM) $(NAME)
+fclean: clean
+
+re: fclean all
+
+.PHONY: all clean fclean re
+

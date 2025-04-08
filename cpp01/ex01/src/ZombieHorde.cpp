@@ -1,4 +1,4 @@
-#include "Zombie.hpp"
+#include "../includes/Zombie.class.hpp"
 
 Zombie* zombieHorde( int N, std::string name )
 {

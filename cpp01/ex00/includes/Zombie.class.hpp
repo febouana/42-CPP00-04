@@ -1,11 +1,11 @@
-#ifdef _ZOMBIE_HPP
-# define _ZOMBIE_HPP
+#ifndef ZOMBIE_CLASS_HPP
+#define ZOMBIE_CLASS_HPP
+
 #include <iostream>
 #include <string>
 
 class Zombie
 {
-
 private :
     std::string _name;
 public:

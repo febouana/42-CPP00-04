@@ -1,4 +1,4 @@
-#include "sedIsForLosers.hpp"
+#include "../includes/sedIsForLosers.hpp"
 
 
 sedIsForLosers::sedIsForLosers()

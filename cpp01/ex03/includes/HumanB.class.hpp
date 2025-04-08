@@ -1,6 +1,7 @@
-#ifndef HUMANB_H
-# define HUMANB_H
-# include "Weapon.hpp"
+#ifndef HUMANB_CLASS_H
+# define HUMANB_CLASS_H
+
+#include "Weapon.class.hpp"
 
 class HumanB
 {

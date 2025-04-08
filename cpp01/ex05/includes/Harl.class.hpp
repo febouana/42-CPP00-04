@@ -1,10 +1,10 @@
-#ifndef HARD_FILTER_HPP
-# define HARD_FILTER_HPP
+#ifndef HARL_CLASS_HPP
+# define HARL_CLASS_HPP
 
 #include <iostream>
 #include <string>
 
-class harlFilter
+class Harl
 {
 private:
     void debug( void );
@@ -12,8 +12,8 @@ private:
     void warning( void ); 
     void error( void );
 public:
-    harlFilter( void );
-    ~harlFilter( void );
+    Harl( void );
+    ~Harl( void );
     void complain( std::string level );
 };
 

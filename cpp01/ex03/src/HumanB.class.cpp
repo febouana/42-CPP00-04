@@ -1,4 +1,4 @@
-#include "HumanB.hpp"
+#include "../includes/HumanB.class.hpp"
 
 HumanB::HumanB( std::string new_name )
 {

@@ -1,6 +1,7 @@
-#ifndef HUMANA_H
-# define HUMANA_H
-# include "Weapon.hpp"
+#ifndef HUMANA_CLASS_H
+# define HUMANA_CLASS_H
+
+# include "Weapon.class.hpp"
 
 class HumanA
 {

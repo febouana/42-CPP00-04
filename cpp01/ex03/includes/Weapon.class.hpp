@@ -1,5 +1,6 @@
-#ifndef WEAPON_H
-# define WEAPON_H
+#ifndef WEAPON_CLASS_H
+# define WEAPON_CLASS_H
+
 #include <iostream>
 #include <string>
 
