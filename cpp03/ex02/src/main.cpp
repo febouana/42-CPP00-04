@@ -1,5 +1,6 @@
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#include "../includes/ClapTrap.class.hpp"
+#include "../includes/ScavTrap.class.hpp"
+#include "../includes/FragTrap.class.hpp"
 
 int main()
 {
@@ -35,6 +36,24 @@ int main()
 
             scavTrap.attack(claptrap.get_Name());
             claptrap.takeDamage(scavTrap.get_AttackDamage());
+            // claptrap.beRepaired(5);
+        }
+    }
+    {
+        std::cout << std::endl << "##### FRAGTRAP TESTS #####" << std::endl;
+        ClapTrap claptrap("ClapClap");
+        FragTrap fragTrap("FragFrag");
+
+        while (claptrap.get_HitPoint() > 0 && fragTrap.get_HitPoint() > 0)
+        {
+            claptrap.attack(fragTrap.get_Name());
+            fragTrap.takeDamage(claptrap.get_AttackDamage());
+            // fragTrap.beRepaired(5);
+            
+            fragTrap.highFivesGuys();
+
+            fragTrap.attack(claptrap.get_Name());
+            claptrap.takeDamage(fragTrap.get_AttackDamage());
             // claptrap.beRepaired(5);
         }
     }

@@ -1,5 +1,5 @@
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#ifndef CLAPTRAP_CLASS_HPP
+#define CLAPTRAP_CLASS_HPP
 
 #include <iostream>
 #include <string>
@@ -19,7 +19,7 @@ public:
     ClapTrap( const ClapTrap &src ); // constructeur de copie (avec arg == reference d'une instance de classe)
     ~ClapTrap( void ); // destructeur classique
     ClapTrap& operator=( const ClapTrap &src ); // surcharge d'operateur d'assignation
-    //methodes
+    //fonction membres
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);

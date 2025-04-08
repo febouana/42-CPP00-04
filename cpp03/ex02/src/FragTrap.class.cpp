@@ -1,4 +1,4 @@
-#include "FragTrap.hpp"
+#include "../includes/FragTrap.class.hpp"
 
 //canonical form and more ==================================================================================================================================
 

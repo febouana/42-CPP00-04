@@ -1,4 +1,4 @@
-#include "ScavTrap.hpp"
+#include "../includes/ScavTrap.class.hpp"
 
 //canonical form and more ==================================================================================================================================
 

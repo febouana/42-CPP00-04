@@ -1,4 +1,4 @@
-#include "ClapTrap.hpp"
+#include "../includes/ClapTrap.class.hpp"
 
 //canonical form and more ==================================================================================================================================
 

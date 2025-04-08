@@ -1,7 +1,7 @@
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#ifndef SCAVTRAP_CLASS_HPP
+#define SCAVTRAP_CLASS_HPP
 
-#include "ClapTrap.hpp"
+#include "ClapTrap.class.hpp"
 
 class ScavTrap : public ClapTrap
 {
@@ -15,7 +15,7 @@ public:
     ScavTrap( const ScavTrap &src ); // constructeur de copie (avec arg == reference d'une instance de classe)
     ~ScavTrap( void ); // destructeur classique
     ScavTrap& operator=( const ScavTrap &src ); // surcharge de l'operateur d'affectation
-    //methodes
+    //fonction membres
     void attack(const std::string& target);
     void guardGate();
 };

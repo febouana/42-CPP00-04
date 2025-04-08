@@ -1,7 +1,7 @@
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef FRAGTRAP_CLASS_HPP
+#define FRAGTRAP_CLASS_HPP
 
-#include "ClapTrap.hpp"
+#include "ClapTrap.class.hpp"
 
 class FragTrap : public ClapTrap
 {
@@ -12,7 +12,7 @@ public:
     FragTrap( const FragTrap &src ); // constructeur de copie (avec arg == reference d'une instance de classe)
     ~FragTrap( void ); // destructeur classique
     FragTrap& operator=( const FragTrap &src ); // surcharge de l'operateur d'affectation
-    //methodes
+    //fonction membres
     void highFivesGuys( void );
     void attack(const std::string& target);
 };
