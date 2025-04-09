@@ -31,8 +31,7 @@ Each project includes:
     - `fclean` (remove object files & executable)
     - `re` (recompile everything)
   - Detailed comments and documentation for code clarity.
-
-(Goodbye norminette! 🥳)
+- Goodbye norminette! 🥳
 ---
 
 ## 📂 Project Structure
@@ -59,7 +58,6 @@ Each project includes:
 │   ├── ex00/
 │   ├── ex01/
 │   └── ...
-└── Makefile                # Compilation instructions
 ```
 ---
 
