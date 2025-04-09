@@ -7,7 +7,7 @@ Welcome to my collection of C++ exercises for the 42 curriculum! This repository
 ## **📜 Project Overview**
 The goal of these exercises is to build a solid foundation in C++ by working through a series of progressively challenging tasks. Each project focuses on different aspects of the language, from basic syntax to advanced features like object-oriented programming, memory management, and more.
 
-### **Key Concepts:**
+### **Key Concepts**
 Each exercise targets specific concepts in C++:
 - **Basic Syntax and Control Structures:** Understanding the basic syntax, loops, and conditionals in C++.
 - **Functions:** Writing and using functions to encapsulate logic.
