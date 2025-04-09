@@ -54,10 +54,10 @@ Each project includes:
 │   ├── ex00/
 │   ├── ex01/
 │   └── ...
-├── CPP04/                  # Exercises for CPP04
-│   ├── ex00/
-│   ├── ex01/
-│   └── ...
+└── CPP04/                  # Exercises for CPP04
+    ├── ex00/
+    ├── ex01/
+    └── ...
 ```
 ---
 
