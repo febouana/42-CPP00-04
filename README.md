@@ -67,7 +67,7 @@ To compile and run the exercises, clone the repository and use the provided Make
 ### **📥 Clone & Compile**
 ```sh
 git clone https://github.com/febouana/42-CPP00-04.git
-cd 42-CPP00-04/[cppXX]/[exXX]
+cd 42-CPP00-04/cpp[XX]/ex[XX]
 make
 ```
 ### **🚀 Running the Shell**
