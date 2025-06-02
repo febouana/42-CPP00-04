@@ -23,16 +23,6 @@ public:
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
-    //to set ClapTrap privates attributes from and for ScavTrap class 
-    void set_Name( std::string name );
-    void set_HitPoint( unsigned int amount );
-    void set_EnergyPoint( unsigned int amount );
-    void set_AttackDamage( unsigned int amount );
-    //to get ClapTrap privates attributes from and for ScavTrap class
-    std::string get_Name( void ) const;
-    unsigned int get_HitPoint( void ) const;
-    unsigned int get_EnergyPoint( void ) const;
-    unsigned int get_AttackDamage( void ) const;
 };
 
 #endif

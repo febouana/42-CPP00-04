@@ -6,15 +6,13 @@
 class FragTrap : public ClapTrap
 {
 public:
-    //canonical form and more
-    FragTrap( void ); // constructeur classique (sans arg)
-    FragTrap( std::string name ); // constructeur avec arg
-    FragTrap( const FragTrap &src ); // constructeur de copie (avec arg == reference d'une instance de classe)
-    ~FragTrap( void ); // destructeur classique
-    FragTrap& operator=( const FragTrap &src ); // surcharge de l'operateur d'affectation
-    //fonction membres
-    void highFivesGuys( void );
+    FragTrap( void );
+    FragTrap( std::string name );
+    FragTrap( const FragTrap &src );
+    ~FragTrap( void );
+    FragTrap& operator=( const FragTrap &src );
     void attack(const std::string& target);
+    void highFivesGuys( void );
 };
 
 #endif

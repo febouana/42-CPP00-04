@@ -1,63 +1,67 @@
 #include "../includes/ScavTrap.class.hpp"
 
-//canonical form and more ==================================================================================================================================
+//? Constructors ==================================================================================================================================
 
-ScavTrap::ScavTrap() : ClapTrap()
+ScavTrap::ScavTrap() : ClapTrap() 
 {
-    set_Name("DefaultScavTrap");
-    set_HitPoint(100);
-    set_EnergyPoint(50);
-    set_AttackDamage(20);
+    std::cout << "DefaultScavTrap: <SCAVTRAP DEFAULT CONSTRUCTOR CALLED>" << std::endl;
+    this->_Name = "DefaultScavTrap";
+    this->_HitPoint = 100;
+    this->_EnergyPoint = 50;
+    this->_AttackDamage = 20;
     this->_GuardGate = false;
-    std::cout << "The DefaultScavTrap "<< get_Name() <<" is born! 🐣" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name) 
+ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
 {
-    set_Name(name);
-    set_HitPoint(100);
-    set_EnergyPoint(50);
-    set_AttackDamage(20);
+    std::cout << name << ": <SCAVTRAP CONSTRUCTOR CALLED>" << std::endl;
+    this->_Name = name;
+    this->_HitPoint = 100;
+    this->_EnergyPoint = 50;
+    this->_AttackDamage = 20;
     this->_GuardGate = false;
-    std::cout << "The ScavTrap "<< get_Name() <<" is born! 🐣" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap(src) 
+ScavTrap::ScavTrap( const ScavTrap &src ) : ClapTrap(src)
 {
+    std::cout << _Name << ": <SCAVTRAP COPY CONSTRUCTOR CALLED>" << std::endl;
     *this = src;
-    std::cout << "ScavTrap " << get_Name() << " is copied! 🐣" << std::endl;
 }
 
-ScavTrap::~ScavTrap(void) 
+//? Destructor ==================================================================================================================================
+
+ScavTrap::~ScavTrap( void )
 {
-    std::cout << "The ScavTrap " << get_Name() << " is dead! 🕊️ " << std::endl;
+    std::cout << _Name << ": <SCAVTRAP DESTRUCTOR CALLED>" << std::endl;
 }
+
+//? Overloaded Operator ==================================================================================================================================
 
 ScavTrap& ScavTrap::operator=( const ScavTrap &src )
 {
+    std::cout << _Name << ": <SCAVTRAP ASSIGNATION OPERATOR CALLED>" << std::endl;
     if (this != &src)
     {
-        set_Name(src.get_Name());
-        set_HitPoint(src.get_HitPoint());
-        set_EnergyPoint(src.get_EnergyPoint());
-        set_AttackDamage(src.get_AttackDamage());
+        this->_Name = src._Name;
+        this->_HitPoint = src._HitPoint;
+        this->_EnergyPoint = src._EnergyPoint;
+        this->_EnergyPoint = src._AttackDamage;
         this->_GuardGate = src._GuardGate;
     }
-    std::cout << "The ScavTrap " << get_Name() << " is assigned! 🐣" << std::endl;
     return (*this);
 }
 
-//methodes ==================================================================================================================================
+//? Public methods ==================================================================================================================================
 
 void ScavTrap::attack(const std::string& target)
 {
-    if (get_EnergyPoint() <= 0)
+    if ( this->_EnergyPoint <= 0)
     {
-        std::cout << get_Name() << " has no energy! He cannot attack!" << std::endl;
+        std::cout << this->_Name << " has no energy! He cannot attack!" << std::endl;
         return ;
     }
-    set_EnergyPoint(get_EnergyPoint() - 1);
-    std::cout << get_Name() << " attacks " << target << ", causing " << get_AttackDamage() << " points of damage! Nice Job!" << std::endl;
+    this->_EnergyPoint--;
+    std::cout << this->_Name << " strikes " << target << ", dealing " << this->_AttackDamage << " damage! Boom!" << std::endl;
 }
 
 void ScavTrap::guardGate()
@@ -65,5 +69,5 @@ void ScavTrap::guardGate()
     if (_GuardGate == true)
         return ;    
     _GuardGate = true;
-    std::cout << get_Name() << " is now in Gate keeper mode! ✨" << std::endl;
-} 
+    std::cout << this->_Name << " is now in Gate keeper mode!" << std::endl;
+}

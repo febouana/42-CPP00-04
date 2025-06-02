@@ -1,29 +1,35 @@
 #include "../includes/ClapTrap.class.hpp"
 
-//canonical form and more ==================================================================================================================================
+//? Constructors ==================================================================================================================================
 
 ClapTrap::ClapTrap( void ) : _Name("DefaultClapTrap"), _HitPoint(10), _EnergyPoint(10), _AttackDamage(0)
 {
-    std::cout << "NoName enter the arena!" << std::endl;
+    std::cout << "DefaultClapTrap: <CLAPTRAP DEFAULT CONSTRUCTOR CALLED>" << std::endl;
 }
 
 ClapTrap::ClapTrap( std::string name ) : _Name(name), _HitPoint(10), _EnergyPoint(10), _AttackDamage(0)
 {
-    std::cout << "<CLAPTRAP CONSTRUCTOR CALLED>" << std::endl;
+    std::cout << _Name << ": <CLAPTRAP CONSTRUCTOR CALLED>" << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap &src )
 {
+    std::cout << _Name << ": <CLAPTRAP COPY CONSTRUCTOR CALLED>" << std::endl;
     *this = src;
 }
 
+//? Destructor ==================================================================================================================================
+
 ClapTrap::~ClapTrap( void )
 {
-    std::cout << "<CLAPTRAP DESTRUCTOR CALLED>" << std::endl;
+    std::cout << _Name << ": <CLAPTRAP DESTRUCTOR CALLED>" << std::endl;
 }
+
+//? Overloaded Operator ==================================================================================================================================
 
 ClapTrap& ClapTrap::operator=( const ClapTrap &src )
 {
+    std::cout << _Name << ": <CLAPTRAP ASSIGNATION OPERATOR CALLED>" << std::endl;
     if (this != &src)
     {
         _Name = src._Name;
@@ -34,7 +40,7 @@ ClapTrap& ClapTrap::operator=( const ClapTrap &src )
     return (*this);
 }
 
-//methodes ==================================================================================================================================
+//? Public methods ==================================================================================================================================
 
 void ClapTrap::attack(const std::string& target)
 {
@@ -57,6 +63,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 }
 
+// augmente ces HPMAX du coup.
 void ClapTrap::beRepaired(unsigned int amount)
 {
     if (_EnergyPoint <= 0)
@@ -66,29 +73,11 @@ void ClapTrap::beRepaired(unsigned int amount)
     }
     _EnergyPoint--;
     _HitPoint += amount;
-    std::cout << _Name << " repaired himself " << amount << " points of damage!" << std::endl;
+    std::cout << _Name << " repaired himself " << amount << " points!" << std::endl;
 }
 
-//to set ClapTrap privates attributes from and for ScavTrap class ==================================================================================================================================
 
-void ClapTrap::set_Name(std::string name)
-{
-    this->_Name = name;
-}
-void ClapTrap::set_HitPoint(unsigned int hit_points)
-{
-    this->_HitPoint = hit_points;
-}
-void ClapTrap::set_EnergyPoint(unsigned int energy_points)
-{
-    this->_EnergyPoint = energy_points;
-}
-void ClapTrap::set_AttackDamage(unsigned int attack_damage)
-{
-    this->_AttackDamage = attack_damage;
-}
-
-//to get ClapTrap privates attributes from and for ScavTrap class ==================================================================================================================================
+//? Getters ==================================================================================================================================
 
 std::string ClapTrap::get_Name(void) const
 {
