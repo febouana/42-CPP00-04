@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Zombie.class.hpp                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: febouana <febouana@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/09 19:05:26 by febouana          #+#    #+#             */
+/*   Updated: 2025/04/10 18:22:46 by febouana         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ZOMBIE_CLASS_HPP
 #define ZOMBIE_CLASS_HPP
 
@@ -16,6 +28,5 @@ public:
 };
 
 Zombie* zombieHorde( int N, std::string name );
-void killHorde( Zombie *horde );
 
 #endif

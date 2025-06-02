@@ -1,41 +1,64 @@
-NAME        = sedIsForLosers
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: apoet <apoet@student.42.fr>                +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/04/09 19:06:57 by febouana          #+#    #+#              #
+#    Updated: 2025/05/21 19:30:33 by apoet            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
+NAME        = sedIsForLosers
 CPP         = c++
 CPPFLAGS    = -Wall -Wextra -Werror -std=c++98
+DIR_DUP     = mkdir -p $(@D)
 RM          = rm -f
+		
+SRC_DIR     := src
+OBJ_DIR     := obj
 
-SRC =	src/main.cpp \
+SRCS =	src/main.cpp \
 		src/sedIsForLosers.cpp
+
+OBJS := $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
 CYAN		= \033[36m
 RESET		= \033[0m
 UP			= \033[A #remonte le curseur d'une ligne dans le terminal
 CUT			= \033[K #efface la ligne courante
 
-all: $(NAME)
-	@printf "\n\
-$(CYAN)  ██████╗██████╗ ██████╗  ██████╗  ██╗       ██████╗ ██╗  ██╗ \n\
-$(CYAN) ██╔════╝██╔══██╗██╔══██╗██╔═████╗███║      ██╔═████╗██║  ██║\n\
-$(CYAN) ██║     ██████╔╝██████╔╝██║██╔██║╚██║█████╗██║██╔██║███████║\n\
-$(CYAN) ██║     ██╔═══╝ ██╔═══╝ ████╔╝██║ ██║╚════╝████╔╝██║╚════██║\n\
-$(CYAN) ╚██████╗██║     ██║     ╚██████╔╝ ██║      ╚██████╔╝     ██║\n\
-$(CYAN)  ╚═════╝╚═╝     ╚═╝      ╚═════╝  ╚═╝       ╚═════╝      ╚═╝$(RESET)\n"
-
-$(NAME):
+$(NAME): $(OBJS)
+	@$(CPP) $(CPPFLAGS) $(OBJS) -o $(NAME) 
 	@printf "$(CYAN)Compiling [$(NAME)]$(RESET)"
 	@sleep 0.2 && printf "$(CYAN).$(RESET)" && sleep 0.2 && printf "$(CYAN).$(RESET)" && sleep 0.2 && printf "$(CYAN).$(RESET)\n"
-	@$(CPP) $(CPPFLAGS) $(SRC) -o $(NAME)
 	@printf "$(UP)$(CUT)"
 	@printf "$(CYAN)Finished [$(NAME)]$(RESET)\n"
 	@printf "$(UP)$(CUT)"
+	@printf "\n\
+	$(CYAN)  ██████╗██████╗ ██████╗  ██████╗  ██╗       ██████╗ ██╗  ██╗ \n\
+	$(CYAN) ██╔════╝██╔══██╗██╔══██╗██╔═████╗███║      ██╔═████╗██║  ██║\n\
+	$(CYAN) ██║     ██████╔╝██████╔╝██║██╔██║╚██║█████╗██║██╔██║███████║\n\
+	$(CYAN) ██║     ██╔═══╝ ██╔═══╝ ████╔╝██║ ██║╚════╝████╔╝██║╚════██║\n\
+	$(CYAN) ╚██████╗██║     ██║     ╚██████╔╝ ██║      ╚██████╔╝     ██║\n\
+	$(CYAN)  ╚═════╝╚═╝     ╚═╝      ╚═════╝  ╚═╝       ╚═════╝      ╚═╝$(RESET)\n"
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	@$(DIR_DUP)
+	@$(CPP) $(CPPFLAGS) -c -o $@ $<
+
+all: $(NAME)
 
 clean:
-	@$(RM) $(NAME)
+	@$(RM) $(OBJS)
 	@printf "$(CYAN)Cleanup done.$(RESET)\n"
 
 fclean: clean
+	@$(RM) $(NAME)
 
 re: fclean all
 
 .PHONY: all clean fclean re
+
 

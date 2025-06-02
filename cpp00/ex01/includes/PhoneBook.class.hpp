@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: febouana <febouana@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/09 18:38:54 by febouana          #+#    #+#             */
+/*   Updated: 2025/04/09 18:39:02 by febouana         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PHONEBOOK_CLASS_HPP
 #define PHONEBOOK_CLASS_HPP
 
@@ -11,7 +23,7 @@
 class PhoneBook 
 {
     private :
-        int _nbr_contact; // pas grd interet de le mettre en static comme pas de presence de plusieurs instances ?
+        int _nbr_contact;
         int _nbr_rewrite;
     public :
         Contact contact[8];

@@ -1,6 +1,16 @@
-#include "../includes/PhoneBook.class.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: febouana <febouana@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/09 18:38:26 by febouana          #+#    #+#             */
+/*   Updated: 2025/04/09 18:38:34 by febouana         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// Quand contact == 8/8 on reecrit systematiquement sur le premier ou on defile encore ?
+#include "../includes/PhoneBook.class.hpp"
 
 int main()
 {

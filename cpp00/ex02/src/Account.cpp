@@ -1,17 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: febouana <febouana@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/09 18:38:23 by febouana          #+#    #+#             */
+/*   Updated: 2025/06/02 15:04:55 by febouana         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "../includes/Account.hpp"
 
 #include <iostream> //cout cin...
 #include <ctime>
 #include <iomanip> //setw()
 
-//! comment declarer var static deja ???????????
-
-int Account::_nbAccounts = 0;
+// var static permet son acces par toutes n'importe quelle instance de classe ou meme en dehors
+int Account::_nbAccounts = 0; 
 int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
   
-//! hein ???????????????????????????????????????????
 Account::Account(int initial_deposit) : _accountIndex(_nbAccounts), _amount(initial_deposit), _nbDeposits(0), _nbWithdrawals(0) 
 {
     _nbAccounts++;
@@ -60,8 +71,8 @@ void Account::displayStatus() const
     Account::_displayTimestamp();
     std::cout << "index:" << this->_accountIndex 
               << ";amount:" << this->_amount
-              << ";deposits:" << this->_nbDeposits //!
-              << ";withdrawals:" << this->_nbWithdrawals //!
+              << ";deposits:" << this->_nbDeposits
+              << ";withdrawals:" << this->_nbWithdrawals
               << std::endl;
 }
 
@@ -121,5 +132,3 @@ void Account::_displayTimestamp(void)
               << std::setw(2) << std::setfill('0') << time->tm_sec
               << "] ";
 }
-
-// refused...... etc

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.class.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: febouana <febouana@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/01 21:55:08 by febouana          #+#    #+#             */
+/*   Updated: 2025/06/02 14:51:00 by febouana         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/Fixed.class.hpp"
 
 const int Fixed::_fractionalBits = 8;
@@ -41,7 +53,7 @@ void Fixed::setRawBits( int const raw )
     this->_rawBits = raw;
 }
 
-// operateur d'affection
+//? Surcharge d'operateur d'affectation.
 Fixed& Fixed::operator=( const Fixed &src )
 {
     // std::cout << "Copy assignment operator called" << std::endl;
@@ -50,25 +62,26 @@ Fixed& Fixed::operator=( const Fixed &src )
     return (*this);
 }
 
-//! a reviser 
+//? Convertit le nombre a virgule fixe en float.
 float	Fixed::toFloat( void ) const
 {
 	return ((float)this->_rawBits / (float)(1 << this->_fractionalBits));
 }
 
+//? Convertit le nombre a virgule fixe en entier.
 int Fixed::toInt( void ) const
 {
     return (this->_rawBits >> _fractionalBits); //decale de 8bits a droite (/ 256 ou 2^8)
 }
 
-//! a reviser 
+//? Convertit 'o' en float et l'affiche directement.
 std::ostream& operator<<( std::ostream &o, Fixed const &fixed )
 {
     o << fixed.toFloat();
     return (o);
 }
 
-//================================
+//================================================================================================
 
 float Fixed::operator+( const Fixed &src ) const
 {
@@ -111,7 +124,7 @@ const Fixed& Fixed::min(Fixed const &a, Fixed const &b)
     return (a.getRawBits() < b.getRawBits() ? a : b);
 }
 
-//================================
+//================================================================================================
 
 bool Fixed::operator>( const Fixed &src ) const
 {
@@ -143,31 +156,33 @@ bool Fixed::operator!=( const Fixed &src ) const
     return (this->getRawBits() != src.getRawBits());
 }
 
-//================================
+//================================================================================================
 
-Fixed& Fixed::operator++( void ) //pre-increment
+// Les 4 opérateurs d’incrémentation et de décrémentation (pré-incrémentation et
+// post-incrémentation, pré-décrémentation et post-décrémentation) qui diminueront
+// la valeur du nombre à virgule fixe d’unité ϵ tel que 1 + ϵ > 1.
+Fixed& Fixed::operator++( void ) // pré-incrémentation (++a)
 {
-    this->_rawBits++;
+    this->_rawBits += 1;
     return (*this);
 }
 
-Fixed Fixed::operator++( int ) //post-increment
+Fixed Fixed::operator++( int ) // post-incrémentation (a++)
 {
     Fixed tmp(*this);
-    operator++();
+    this->_rawBits += 1;
     return (tmp);
 }
 
-Fixed& Fixed::operator--( void ) //pre-decrement
+Fixed& Fixed::operator--( void ) // pré-décrémentation (--a)
 {
-    this->_rawBits--;
+    this->_rawBits -= 1;
     return (*this);
 }
 
-Fixed Fixed::operator--( int ) //post-decrement
+Fixed Fixed::operator--( int ) // post-décrémentation (a--)
 {
     Fixed tmp(*this);
-    operator--();
+    this->_rawBits -= 1;
     return (tmp);
 }
-
