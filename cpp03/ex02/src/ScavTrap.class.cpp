@@ -45,7 +45,7 @@ ScavTrap& ScavTrap::operator=( const ScavTrap &src )
         this->_Name = src._Name;
         this->_HitPoint = src._HitPoint;
         this->_EnergyPoint = src._EnergyPoint;
-        this->_EnergyPoint = src._AttackDamage;
+        this->_AttackDamage = src._AttackDamage;
         this->_GuardGate = src._GuardGate;
     }
     return (*this);

@@ -32,10 +32,10 @@ ClapTrap& ClapTrap::operator=( const ClapTrap &src )
     std::cout << _Name << ": <CLAPTRAP ASSIGNATION OPERATOR CALLED>" << std::endl;
     if (this != &src)
     {
-        _Name = src._Name;
-        _HitPoint = src._HitPoint;
-        _EnergyPoint = src._EnergyPoint;
-        _AttackDamage = src._AttackDamage;
+        this->_Name = src._Name;
+        this->_HitPoint = src._HitPoint;
+        this->_EnergyPoint = src._EnergyPoint;
+        this->_AttackDamage = src._AttackDamage;
     }
     return (*this);
 }

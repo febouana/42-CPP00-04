@@ -1,26 +1,25 @@
-#include "../includes/ClapTrap.class.hpp"
 #include "../includes/ScavTrap.class.hpp"
 
 //? Constructors ==================================================================================================================================
 
 ScavTrap::ScavTrap() : ClapTrap() 
 {
-    std::cout << "DefaultScavTrap: <SCAVTRAP DEFAULT CONSTRUCTOR CALLED>" << std::endl;
-    this->_Name = "DefaultScavTrap";
+    // this->_Name = "DefaultScavTrap";
     this->_HitPoint = 100;
     this->_EnergyPoint = 50;
     this->_AttackDamage = 20;
     this->_GuardGate = false;
+    std::cout << this->_Name << " : <SCAVTRAP DEFAULT CONSTRUCTOR CALLED>" << std::endl;
 }
 
 ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
 {
-    std::cout << name << ": <SCAVTRAP CONSTRUCTOR CALLED>" << std::endl;
     this->_Name = name;
     this->_HitPoint = 100;
     this->_EnergyPoint = 50;
     this->_AttackDamage = 20;
     this->_GuardGate = false;
+    std::cout << this->_Name << ": <SCAVTRAP CONSTRUCTOR CALLED>" << std::endl;
 }
 
 ScavTrap::ScavTrap( const ScavTrap &src ) : ClapTrap(src)

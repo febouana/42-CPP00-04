@@ -1,4 +1,4 @@
-NAME        = FragTrap
+NAME        = DiamondTrap
 CPP         = c++
 CPPFLAGS    = -Wall -Wextra -Werror -std=c++98
 DIR_DUP     = mkdir -p $(@D)
@@ -11,6 +11,7 @@ SRCS        	= src/main.cpp \
 				src/ClapTrap.class.cpp \
 				src/ScavTrap.class.cpp \
 				src/FragTrap.class.cpp \
+				src/DiamondTrap.class.cpp \
 
 OBJS := $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
@@ -27,12 +28,12 @@ $(NAME): $(OBJS)
 	@printf "$(CYAN)Finished [$(NAME)]$(RESET)\n"
 	@printf "$(UP)$(CUT)"
 	@printf "\n\
-	$(CYAN)  ██████╗██████╗ ██████╗  ██████╗ ██████╗        ██████╗ ██████╗  \n\
+	$(CYAN)  ██████╗██████╗ ██████╗  ██████╗ ██████╗        ██████╗ ██████╗\n\
 	$(CYAN) ██╔════╝██╔══██╗██╔══██╗██╔═████╗╚════██╗      ██╔═████╗╚════██╗\n\
 	$(CYAN) ██║     ██████╔╝██████╔╝██║██╔██║ █████╔╝█████╗██║██╔██║ █████╔╝\n\
-	$(CYAN) ██║     ██╔═══╝ ██╔═══╝ ████╔╝██║ ╚═══██╗╚════╝████╔╝██║██╔═══╝ \n\
-	$(CYAN) ╚██████╗██║     ██║     ╚██████╔╝██████╔╝      ╚██████╔╝███████╗\n\
-	$(CYAN)  ╚═════╝╚═╝     ╚═╝      ╚═════╝ ╚═════╝        ╚═════╝  ╚═════╝  $(RESET)\n"
+	$(CYAN) ██║     ██╔═══╝ ██╔═══╝ ████╔╝██║ ╚═══██╗╚════╝████╔╝██║ ╚═══██╗\n\
+	$(CYAN) ╚██████╗██║     ██║     ╚██████╔╝██████╔╝      ╚██████╔╝██████╔╝\n\
+	$(CYAN)  ╚═════╝╚═╝     ╚═╝      ╚═════╝ ╚═════╝        ╚═════╝  ╚════╝$(RESET)\n"\
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@$(DIR_DUP)
