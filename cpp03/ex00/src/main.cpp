@@ -17,5 +17,6 @@ int main()
     
     contender.attack("Challenger");
     challenger.takeDamage(0);
+    
     return (0);
 }

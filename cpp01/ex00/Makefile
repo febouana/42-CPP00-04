@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: apoet <apoet@student.42.fr>                +#+  +:+       +#+         #
+#    By: febouana <febouana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/10 18:05:55 by febouana          #+#    #+#              #
-#    Updated: 2025/05/21 19:18:49 by apoet            ###   ########.fr        #
+#    Updated: 2025/06/02 15:24:59 by febouana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,7 @@ all: $(NAME)
 
 clean:
 	@$(RM) $(OBJS)
+	@rm -rf $(OBJ_DIR)
 	@printf "$(CYAN)Cleanup done.$(RESET)\n"
 
 fclean: clean

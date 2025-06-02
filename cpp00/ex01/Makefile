@@ -6,7 +6,7 @@
 #    By: febouana <febouana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/09 18:39:39 by febouana          #+#    #+#              #
-#    Updated: 2025/06/02 15:02:54 by febouana         ###   ########.fr        #
+#    Updated: 2025/06/02 15:20:27 by febouana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,7 @@ all: $(NAME)
 
 clean:
 	@$(RM) $(OBJS)
+	@rm -rf $(OBJ_DIR)
 	@printf "$(CYAN)Cleanup done.$(RESET)\n"
 
 fclean: clean

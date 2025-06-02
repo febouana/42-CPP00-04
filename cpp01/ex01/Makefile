@@ -42,6 +42,7 @@ all: $(NAME)
 
 clean:
 	@$(RM) $(OBJS)
+	@rm -rf $(OBJ_DIR)
 	@printf "$(CYAN)Cleanup done.$(RESET)\n"
 
 fclean: clean
