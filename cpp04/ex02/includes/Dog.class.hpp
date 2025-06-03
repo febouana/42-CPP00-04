@@ -18,7 +18,7 @@ public:
     void makeSound( void ) const;
     //Brain getters + setters
     std::string getIdeas( int i ) const;
-    void setIdeas( int i, std::string idea );
+    void setIdeas( int i, std::string idea ); 
 };
 
 #endif

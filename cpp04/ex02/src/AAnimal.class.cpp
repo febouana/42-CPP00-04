@@ -23,7 +23,8 @@ AAnimal& AAnimal::operator=( const AAnimal &copy )
 {
     if (this != &copy)
     {
-        // Copy the attributes from src to this object
+        this->_type = copy._type;
+
     }
     std::cout << "<AAnimal ASSIGNATION OPERATOR CALLED>" << std::endl;
     return (*this);
@@ -41,22 +42,22 @@ void AAnimal::setType( std::string _type )
     this->_type = _type;
 }
 
-void AAnimal::makeSound( void ) const
-{ 
-    std::cout << "AAnimal: AAnimal sound!" << std::endl;
-}
+// void AAnimal::makeSound( void ) const
+// { 
+//     std::cout << "AAnimal: AAnimal sound!" << std::endl;
+// }
 
 // ########## CAT DOG BRAIN GETTERS + SETTERS ##########
 
-void AAnimal::setIdeas( int index, std::string idea )
-{
-    (void)index;
-    (void)idea;
-    std::cout << "AAnimal has no ideas to set." << std::endl;
-}
+// void AAnimal::setIdeas( int index, std::string idea )
+// {
+//     (void)index;
+//     (void)idea;
+//     std::cout << "AAnimal has no ideas to set." << std::endl;
+// }
 
-std::string AAnimal::getIdeas( int index ) const
-{
-    (void)index;
-    return "AAnimal has no ideas.";
-}
+// std::string AAnimal::getIdeas( int index ) const
+// {
+//     (void)index;
+//     return "AAnimal has no ideas.";
+// }

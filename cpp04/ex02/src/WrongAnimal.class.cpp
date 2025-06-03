@@ -1,35 +1,35 @@
 #include "../includes/WrongAnimal.class.hpp"
 
-// ########## WrongAnimal CANON ##########
+// ########## WRONGANIMAL CANON ##########
 
 WrongAnimal::WrongAnimal( void )
 {
     this->_type = "WrongAnimal";
-    std::cout << "<WrongAnimal CONSTRUCTOR CALLED>" << std::endl;
+    std::cout << "<WRONGANIMAL CONSTRUCTOR CALLED>" << std::endl;
 }
 
 WrongAnimal::WrongAnimal( const WrongAnimal &copy )
 {
     *this = copy;
-    std::cout << "<WrongAnimal COPY CONSTRUCTOR CALLED>" << std::endl;
+    std::cout << "<WRONGANIMAL COPY CONSTRUCTOR CALLED>" << std::endl;
 }
 
 WrongAnimal::~WrongAnimal( void )
 {
-    std::cout << "<WrongAnimal DESTRUCTOR CALLED>" << std::endl;
+    std::cout << "<WRONGANIMAL DESTRUCTOR CALLED>" << std::endl;
 }
 
 WrongAnimal& WrongAnimal::operator=( const WrongAnimal &copy )
 {
     if (this != &copy)
     {
-        // Copy the attributes from src to this object
+        this->_type = copy._type;
     }
-    std::cout << "<WrongAnimal ASSIGNATION OPERATOR CALLED>" << std::endl;
+    std::cout << "<WRONGANIMAL ASSIGNATION OPERATOR CALLED>" << std::endl;
     return (*this);
 }
 
-// ########## WrongAnimal METHODES ##########
+// ########## WRONGANIMAL METHODES ##########
 
 std::string WrongAnimal::getType( void ) const
 {
@@ -43,5 +43,5 @@ void WrongAnimal::setType( std::string _type )
 
 void WrongAnimal::makeSound( void ) const
 { 
-    std::cout << "WrongAnimal: WrongAnimal sound!" << std::endl;
+    std::cout << "WRONGANIMAL: WrongAnimal sound!" << std::endl;
 }

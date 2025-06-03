@@ -54,8 +54,6 @@ int main()
     }
 
     // Simple test with abstract class to show the good error message 
-    // std::cout << std::endl << "############ Another tests with AAnimal Abstract Class ############" << std::endl << std::endl;
-
 	// const AAnimal *animal = new AAnimal();
 	// animal->makeSound();
 

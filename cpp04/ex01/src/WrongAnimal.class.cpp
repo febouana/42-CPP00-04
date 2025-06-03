@@ -23,7 +23,7 @@ WrongAnimal& WrongAnimal::operator=( const WrongAnimal &copy )
 {
     if (this != &copy)
     {
-        // Copy the attributes from src to this object
+        this->_type = copy._type;
     }
     std::cout << "<WRONGANIMAL ASSIGNATION OPERATOR CALLED>" << std::endl;
     return (*this);

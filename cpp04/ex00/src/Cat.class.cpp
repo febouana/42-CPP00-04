@@ -10,8 +10,8 @@ Cat::Cat( void ) : Animal()
 
 Cat::Cat( const Cat &copy ) : Animal( copy )
 {
-    *this = copy;
     std::cout << "<CAT COPY CONSTRUCTOR CALLED>" << std::endl;
+    setType(copy.getType());
 }
 
 Cat::~Cat( void )
@@ -21,11 +21,11 @@ Cat::~Cat( void )
 
 Cat& Cat::operator=( const Cat &src )
 {
+    std::cout << "<CAT ASSIGNATION OPERATOR CALLED>" << std::endl;
     if (this != &src)
     {
         setType(src.getType());    
     }
-    std::cout << "<CAT ASSIGNATION OPERATOR CALLED>" << std::endl;
     return (*this);
 }
 

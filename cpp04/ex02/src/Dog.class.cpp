@@ -11,8 +11,17 @@ Dog::Dog( void ) : AAnimal()
 
 Dog::Dog( const Dog &src ) : AAnimal(src)
 {
-    *this = src;
     std::cout << "<DOG COPY CONSTRUCTOR CALLED>" << std::endl;
+    // Deep copy - important to create a NEW Brain
+    this->brain = new Brain();
+    // Copy the brain contents
+    if (src.brain)
+    {
+        for (int i = 0; i < 100; i++)
+        {
+            this->setIdeas(i, src.getIdeas(i));
+        }
+    }
 }
 
 Dog::~Dog( void )
@@ -23,11 +32,24 @@ Dog::~Dog( void )
 
 Dog& Dog::operator=( const Dog &src )
 {
+    std::cout << "<DOG ASSIGNATION OPERATOR CALLED>" << std::endl;
     if (this != &src)
     {
-        setType(src.getType());   
+        AAnimal::operator=(src);
+        if (this->brain)
+        {
+            delete this->brain;
+            this->brain = NULL;
+        }
+        this->brain = new Brain();
+        if (src.brain)
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                this->setIdeas(i, src.getIdeas(i));
+            }
+        }
     }
-    std::cout << "<DOG ASSIGNATION OPERATOR CALLED>" << std::endl;
     return (*this);
 }
 

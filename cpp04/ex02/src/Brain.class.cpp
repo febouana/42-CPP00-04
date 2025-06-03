@@ -35,8 +35,7 @@ std::string Brain::getIdeas( int index ) const
 
 // ########## BRAIN SETTERS ###################################################################################
 
-std::string Brain::setIdeas( int index, std::string idea )
+void Brain::setIdeas( int index, std::string idea )
 {
     this->_ideas[index] = idea;
-    return (this->_ideas[index]);
 }

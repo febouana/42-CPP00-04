@@ -23,7 +23,7 @@ Animal& Animal::operator=( const Animal &copy )
 {
     if (this != &copy)
     {
-        // Copy the attributes from src to this object
+        this->_type = copy._type;
     }
     std::cout << "<ANIMAL ASSIGNATION OPERATOR CALLED>" << std::endl;
     return (*this);

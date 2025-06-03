@@ -15,8 +15,8 @@ public:
     ~Brain( void );
     Brain& operator=( const Brain &src );
     // getters + setters
-    std::string getIdeas( int index ) const;
-    std::string setIdeas( int index, std::string idea );
+    std::string getIdeas( int index ) const; 
+    void setIdeas( int index, std::string idea );
 };
 
 #endif

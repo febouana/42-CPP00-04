@@ -11,8 +11,17 @@ Cat::Cat( void ) : AAnimal()
 
 Cat::Cat( const Cat &copy ) : AAnimal( copy )
 {
-    *this = copy;
     std::cout << "<CAT COPY CONSTRUCTOR CALLED>" << std::endl;
+    // Deep copy - important to create a NEW Brain
+    this->brain = new Brain();
+    // Copy the brain contents
+    if (copy.brain)
+    {
+        for (int i = 0; i < 100; i++)
+        {
+            this->setIdeas(i, copy.getIdeas(i));
+        }
+    }
 }
 
 Cat::~Cat( void )
@@ -23,11 +32,24 @@ Cat::~Cat( void )
 
 Cat& Cat::operator=( const Cat &src )
 {
+    std::cout << "<CAT ASSIGNATION OPERATOR CALLED>" << std::endl;
     if (this != &src)
     {
-        setType(src.getType());    
+        AAnimal::operator=(src);
+        if (this->brain)
+        {
+            delete this->brain;
+            this->brain = NULL;
+        }
+        this->brain = new Brain();
+        if (src.brain)
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                this->setIdeas(i, src.getIdeas(i));
+            }
+        }
     }
-    std::cout << "<CAT ASSIGNATION OPERATOR CALLED>" << std::endl;
     return (*this);
 }
 
